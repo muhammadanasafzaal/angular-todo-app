@@ -1,0 +1,11 @@
+<!-- getting a todo object value from todos component as input -->
+
+<!-- <small>{{todo.sno}}.</small> -->
+<!-- <h5 [class]="todo.active?'nostrike':'strike'">{{todo.title}}</h5>  -->
+<h5 [ngClass]="{'strike': !todo.active }">{{todo.title}}</h5> 
+<p [ngClass]="{'strike': !todo.active }">{{todo.desc}}</p>
+<div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="todo{{i}}" (click)="oncheckboxClick(todo)" [checked]="!todo.active">
+    <label class="form-check-label" for="todo{{i}}">Check me out</label>
+</div>
+<button class="btn btn-sm btn-danger" (click)="onClick(todo)">Delete</button>
